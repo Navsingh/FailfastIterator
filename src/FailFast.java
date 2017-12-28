@@ -73,7 +73,6 @@ public class FailFast {
         }*/
         student student = new student();
         student student1 = new student(2);
-      //  student student2 = new student();
         student student2 = student;
         System.out.println("Both object equal  student and student1 "+student.equals(student1));
         System.out.println("Both objects student and student2 equal "+student.equals(student2));
@@ -83,6 +82,23 @@ public class FailFast {
         String lastName = new String("Navjot");
         System.out.println("Strings equals(==) "+ (firstName == lastName));
         System.out.println("Strings equals(.equal()) "+firstName.equals(lastName));
+        HashSet<student> hashSet = new HashSet<>();
+        hashSet.add(student);
+        hashSet.add(student1);
+        System.out.println(hashSet.hashCode());
+        if(hashSet.contains( new student(2)))
+        {
+            System.out.println("Yes it contains "+hashSet.hashCode());
+        }
+        else
+        {
+            System.out.println("False");
+        }
+        Iterator iterator = hashSet.iterator();
+        while (iterator.hasNext())
+        {
+            System.out.println("Hashcode is "+iterator.next().hashCode());
+        }
 
 
     }
@@ -98,7 +114,7 @@ public class FailFast {
           this.id = id;
       }
 
-     /*   @Override
+      @Override
         public boolean equals(Object obj) {
              if(obj instanceof student)
             {
@@ -109,6 +125,11 @@ public class FailFast {
                 }
             }
                    return  false;
-            }*/
+            }
+
+        @Override
+        public int hashCode() {
+            return id;
+        }
     }
 }
