@@ -9,7 +9,7 @@ public class FailFast {
     public static  void  main(String args[])
     {
         //**********************************Fail Fast Collections***********************\\
-        ArrayList<String> arrayList = new ArrayList<>();
+       /* ArrayList<String> arrayList = new ArrayList<>();
         arrayList.add("Nav");
         arrayList.add("Singh");
         arrayList.add("Lamme");
@@ -70,6 +70,45 @@ public class FailFast {
         {
 
             System.out.println(entry.getValue());
-        }
+        }*/
+        student student = new student();
+        student student1 = new student(2);
+      //  student student2 = new student();
+        student student2 = student;
+        System.out.println("Both object equal  student and student1 "+student.equals(student1));
+        System.out.println("Both objects student and student2 equal "+student.equals(student2));
+        System.out.println("Both objects student and student2 equal(==) "+(student==student2));
+        //System.out.println("Hascodes following "+ student.hashCode()+"Student1 "+student1.hashCode());
+        String firstName = new String("Navjot");
+        String lastName = new String("Navjot");
+        System.out.println("Strings equals(==) "+ (firstName == lastName));
+        System.out.println("Strings equals(.equal()) "+firstName.equals(lastName));
+
+
+    }
+    public static class  student
+    {
+      int id;
+      student()
+      {
+          id = 1;
+      }
+      student(int id)
+      {
+          this.id = id;
+      }
+
+     /*   @Override
+        public boolean equals(Object obj) {
+             if(obj instanceof student)
+            {
+                student student12 = (student) obj;
+                if(this.id==student12.id)
+                {
+                    return  true;
+                }
+            }
+                   return  false;
+            }*/
     }
 }
